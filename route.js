@@ -11,16 +11,16 @@ function req(request, response) {
   fs.readFile(fileName, function (err, data) {
     if (err) {
       response.writeHead(404, {
-        "Content-Type": "text/html",
+        "Content-Type": "text/html; charset=UTF-8",
       });
-      return response.end("<h1>Not Found</h1>");
+      return response.end("<h1>404 Не знайдено</h1>");
     }
     response.writeHead(200, {
-      "Content-Type": "text/html",
+      "Content-Type": "text/html;; charset=UTF-8",
     });
     response.write(data);
     return response.end();
   });
 }
-http.createServer(req).listen(8080);
+http.createServer(req).listen(5050);
 console.log("Server starter");

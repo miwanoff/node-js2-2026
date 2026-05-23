@@ -10,7 +10,7 @@ function req(request, response) {
   response.writeHead(200, {
     "Content-Type": "text/html",
   });
-  response.write("Welcome");
+  response.write("<h1>Welcome</h1>");
   response.write(pathname);
   response.end();
 }
