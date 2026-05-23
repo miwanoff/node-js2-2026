@@ -11,6 +11,9 @@ app.get("/summer", function (req, res) {
 app.get("/winter", function (req, res) {
   res.sendFile(__dirname + "/winter.html");
 });
+app.get("/spring", function (req, res) {
+  res.sendFile(__dirname + "/spring.html");
+});
 app.listen(port, function () {
   return console.log("port is " + port);
 });
