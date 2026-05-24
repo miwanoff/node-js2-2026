@@ -24,6 +24,12 @@ io.on("connection", function (s) {
   s.on("player", function (id) {
     console.log("Player "+ s.id+" name received: " + id);
   });
+
+  // Так можна показати, який юзер відключився:
+  s.on("disconnect", function () {
+    console.log(`Користувач з ID [${s.id}] відключився`);
+  });
+
 });
 
 
