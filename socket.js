@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 6000;
-
+const port = 6060;
 
 // Підключення HTTP-сервера та Socket.io
 const http = require("http").createServer(app);
@@ -23,7 +22,7 @@ io.on("connection", function (s) {
   console.log("ready to use socket, user connected: " + s.id);
  
   s.on("player", function (id) {
-    console.log("Player name received: " + id);
+    console.log("Player "+ s.id+" name received: " + id);
   });
 });
 
