@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Socket</h1>
+    <input type="text" name="user" id="user" />
+    <button class="btn">Roll</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      const btn = document.querySelector(".btn");
+      const user = document.querySelector("#user"); // Знаходимо інпут <input id="user"/>
+      btn.addEventListener("click", function () {
+        // user.value — це текст, який користувач ввів у поле інпут.
+        // socket.emit відправляє подію з назвою "player" і передає цей текст на сервер.
+        socket.emit("player", user.value);
+      });
+    </script>
+
+</body>
+</html>
